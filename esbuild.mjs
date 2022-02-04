@@ -1,5 +1,8 @@
 import esbuild from 'esbuild'
-import { nodeExternalsPlugin } from 'esbuild-node-externals'
+import {nodeExternalsPlugin} from 'esbuild-node-externals'
+import postCssPlugin from 'esbuild-plugin-postcss2';
+import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
 
 esbuild.build({
   entryPoints: ['src/index.ts'],
@@ -10,7 +13,12 @@ esbuild.build({
   splitting: true,
   format: 'esm',
   target: 'esnext',
-  plugins: [nodeExternalsPlugin()],
+  plugins: [
+    nodeExternalsPlugin(),
+    postCssPlugin.default({
+      plugins: [autoprefixer, tailwindcss]
+    })
+  ],
 })
 
 esbuild.build({
@@ -21,5 +29,10 @@ esbuild.build({
   minify: true,
   format: 'cjs',
   target: 'esnext',
-  plugins: [nodeExternalsPlugin()],
+  plugins: [
+    nodeExternalsPlugin(),
+    postCssPlugin.default({
+      plugins: [autoprefixer, tailwindcss]
+    })
+  ],
 })
