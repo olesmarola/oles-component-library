@@ -1,0 +1,35 @@
+{
+  "name": "@olesmarola/oles-component-library",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/olesmarola"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "ts-types": "tsc --emitDeclarationOnly --outDir dist",
+    "build": "rimraf dist && node ./esbuild.mjs && npm run ts-types"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "autoprefixer": "^10.4.2",
+    "esbuild": "^0.14.18",
+    "esbuild-node-externals": "^1.4.1",
+    "postcss": "^8.4.6",
+    "react": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^3.0.18",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "next": "^12.0.10"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
