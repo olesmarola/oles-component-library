@@ -3,12 +3,12 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/olesmarola"
   },
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "",
   "scripts": {
     "ts-types": "tsc --emitDeclarationOnly --outDir dist",
     "build": "rimraf dist && node ./esbuild.mjs && npm run ts-types",
-    "css": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css"
+    "css": "npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css"
   },
   "keywords": [],
   "author": "",
