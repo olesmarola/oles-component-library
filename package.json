@@ -8,7 +8,7 @@
   "scripts": {
     "ts-types": "tsc --emitDeclarationOnly --outDir dist",
     "build": "rimraf dist && node ./esbuild.mjs && npm run ts-types",
-    "css": "npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css"
+    "css": "npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify"
   },
   "keywords": [],
   "author": "",
